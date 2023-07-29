@@ -29,9 +29,6 @@
         <i:EventTrigger EventName="Loaded">
             <command:InvokeCommandAction Command="{Binding LoadedCommand}" PassEventArgsToCommand="True"/>
         </i:EventTrigger>
-        <i:EventTrigger EventName="SizeChanged">
-            <command:InvokeCommandAction Command="{Binding SizeChangedCommand}" PassEventArgsToCommand="True" />
-        </i:EventTrigger>
         <i:EventTrigger EventName="MouseEnter">
             <command:InvokeCommandAction Command="{Binding MouseEnterCommand}" PassEventArgsToCommand="True" />
         </i:EventTrigger>
