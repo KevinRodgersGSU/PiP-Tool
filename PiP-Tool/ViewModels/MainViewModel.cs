@@ -90,7 +90,7 @@ namespace PiP_Tool.ViewModels
         /// </summary>
         private void UpdateWindowsList()
         {
-            Logger.Instance.Info("Windows list updated");
+            //Logger.Instance.Info("Windows list updated");
             var openWindows = ProcessesService.Instance.OpenWindows;
 
             var toAdd = openWindows.Where(x => WindowsList.All(y => x != y));
