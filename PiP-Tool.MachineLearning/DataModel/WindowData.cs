@@ -1,5 +1,4 @@
-﻿
-using Microsoft.ML.Data;
+﻿using Microsoft.ML.Data;
 
 namespace PiP_Tool.MachineLearning.DataModel
 {
