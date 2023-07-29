@@ -48,7 +48,7 @@
             Canvas.Left="0"
             Opacity="{StaticResource Opacity}"
             Fill="Black"
-            Width="500"
+            Width="{Binding MaxWidth, UpdateSourceTrigger=PropertyChanged}"
             Height="{Binding (Canvas.Top), ElementName=Cropper, UpdateSourceTrigger=PropertyChanged}"/>
         <Rectangle
             x:Name="HideLeft"
@@ -64,7 +64,7 @@
             Canvas.Left="0"
             Opacity="{StaticResource Opacity}"
             Fill="Black"
-            Width="500"
+            Width="{Binding MaxWidth, UpdateSourceTrigger=PropertyChanged}"
             Height="{Binding (Canvas.Bottom), ElementName=Cropper, UpdateSourceTrigger=PropertyChanged}"
         />
         <Rectangle
