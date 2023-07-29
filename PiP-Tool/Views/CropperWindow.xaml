@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        xmlns:viewModels="clr-namespace:PiP_Tool.ViewModels" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:viewModels="clr-namespace:PiP_Tool.ViewModels" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         AllowsTransparency="True" 
         WindowStyle="None" 
@@ -47,7 +48,7 @@
             Canvas.Left="0"
             Opacity="{StaticResource Opacity}"
             Fill="Black"
-            Width="{Binding MaxWidth, UpdateSourceTrigger=PropertyChanged}"
+            Width="500"
             Height="{Binding (Canvas.Top), ElementName=Cropper, UpdateSourceTrigger=PropertyChanged}"/>
         <Rectangle
             x:Name="HideLeft"
@@ -63,7 +64,7 @@
             Canvas.Left="0"
             Opacity="{StaticResource Opacity}"
             Fill="Black"
-            Width="{Binding MaxWidth, UpdateSourceTrigger=PropertyChanged}"
+            Width="500"
             Height="{Binding (Canvas.Bottom), ElementName=Cropper, UpdateSourceTrigger=PropertyChanged}"
         />
         <Rectangle

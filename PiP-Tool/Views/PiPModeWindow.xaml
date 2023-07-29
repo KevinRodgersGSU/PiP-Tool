@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:PiP_Tool.ViewModels"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:command="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
         ResizeMode="CanResizeWithGrip" 
@@ -27,19 +27,19 @@
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <command:EventToCommand Command="{Binding LoadedCommand}" PassEventArgsToCommand="True"/>
+            <command:InvokeCommandAction Command="{Binding LoadedCommand}" PassEventArgsToCommand="True"/>
         </i:EventTrigger>
         <i:EventTrigger EventName="SizeChanged">
-            <command:EventToCommand Command="{Binding SizeChangedCommand}" PassEventArgsToCommand="True" />
+            <command:InvokeCommandAction Command="{Binding SizeChangedCommand}" PassEventArgsToCommand="True" />
         </i:EventTrigger>
         <i:EventTrigger EventName="MouseEnter">
-            <command:EventToCommand Command="{Binding MouseEnterCommand}" PassEventArgsToCommand="True" />
+            <command:InvokeCommandAction Command="{Binding MouseEnterCommand}" PassEventArgsToCommand="True" />
         </i:EventTrigger>
         <i:EventTrigger EventName="MouseLeave">
-            <command:EventToCommand Command="{Binding MouseLeaveCommand}" PassEventArgsToCommand="True" />
+            <command:InvokeCommandAction Command="{Binding MouseLeaveCommand}" PassEventArgsToCommand="True" />
         </i:EventTrigger>
         <i:EventTrigger EventName="DpiChanged">
-            <command:EventToCommand Command="{Binding DpiChangedCommand}" />
+            <command:InvokeCommandAction Command="{Binding DpiChangedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
