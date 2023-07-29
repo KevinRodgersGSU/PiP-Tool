@@ -87,14 +87,12 @@ namespace PiP_Tool.MachineLearning
                 Logger.Instance.Info("ML : Training model");
                 CheckDataFile();
                 var trainingDataView = _mlContext.Data.LoadFromTextFile<WindowData>(Constants.DataPath, separatorChar: ',');
-                var pipeline = _mlContext.Transforms.Conversion.MapValueToKey(outputColumnName: "Label", inputColumnName: nameof(WindowData.Region))
+                var pipeline = _mlContext.Transforms.Text.FeaturizeText(outputColumnName: "PredictedLabel", inputColumnName: "Label")
                     .Append(_mlContext.Transforms.Text.FeaturizeText(outputColumnName: "ProgramFeaturized", inputColumnName: nameof(WindowData.Program)))
                     .Append(_mlContext.Transforms.Text.FeaturizeText(outputColumnName: "WindowTitleFeaturized", inputColumnName: nameof(WindowData.WindowTitle)))
-                    .Append(_mlContext.Transforms.Concatenate("Features", "ProgramFeaturized", "WindowTitleFeaturized", nameof(WindowData.WindowTop), nameof(WindowData.WindowLeft), nameof(WindowData.WindowHeight), nameof(WindowData.WindowWidth)))
-                    .Append(_mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"))
-                    .Append(_mlContext.MulticlassClassification.Trainers.SdcaNonCalibrated())
-                    .Append(_mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
-
+                    .Append(_mlContext.Transforms.Concatenate("Features", "ProgramFeaturized", "WindowTitleFeaturized"))
+                    .Append(_mlContext.Regression.Trainers.Sdca(labelColumnName: "WindowTop", featureColumnName: "Features"))
+                    .Append(_mlContext.Transforms.Conversion.MapValueToKey("PredictedLabel"));
                 await _semaphore.WaitAsync();
                 _model = pipeline.Fit(trainingDataView);
                 _semaphore.Release();
@@ -123,7 +121,7 @@ namespace PiP_Tool.MachineLearning
             if (!_ready.Task.IsCompleted)
                 await _ready.Task;
 
-            await _semaphore.WaitAsync();
+            //await _semaphore.WaitAsync();
             var predictionEngine = _mlContext.Model.CreatePredictionEngine<WindowData, RegionPrediction>(_model);
             var prediction = predictionEngine.Predict(windowData);
             _semaphore.Release();
