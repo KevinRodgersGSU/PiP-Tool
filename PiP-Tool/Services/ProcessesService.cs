@@ -224,6 +224,7 @@ namespace PiP_Tool.Services
         /// </summary>
         private void SetExcludedProcesses()
         {
+            if (Application.Current == null) { new Application { ShutdownMode = ShutdownMode.OnExplicitShutdown }; }
             var windowsList = Application.Current.Windows.Cast<Window>();
             _excludedWindows = new List<IntPtr>();
             foreach (var window in windowsList)

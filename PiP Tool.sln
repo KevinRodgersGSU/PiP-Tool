@@ -1,17 +1,17 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiP-Tool.Native", "PiP-Tool.Native\PiP-Tool.Native.csproj", "{C1E4ED3B-147C-4F7C-8F78-007ABB3ACF3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiP-Tool.Native", "PiP-Tool.Native\PiP-Tool.Native.csproj", "{C1E4ED3B-147C-4F7C-8F78-007ABB3ACF3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiP-Tool", "PiP-Tool\PiP-Tool.csproj", "{C11CF462-9B98-4FAF-9ECB-7A069599BA15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiP-Tool", "PiP-Tool\PiP-Tool.csproj", "{C11CF462-9B98-4FAF-9ECB-7A069599BA15}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PiP-Tool.Installer", "PiP-Tool.Installer\PiP-Tool.Installer.vdproj", "{20B4BDFC-E688-450F-AB69-D6891B63C729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiP-Tool.MachineLearning", "PiP-Tool.MachineLearning\PiP-Tool.MachineLearning.csproj", "{E42FCF21-8C65-44AE-82F5-43F0ACC09755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiP-Tool.MachineLearning", "PiP-Tool.MachineLearning\PiP-Tool.MachineLearning.csproj", "{E42FCF21-8C65-44AE-82F5-43F0ACC09755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiP-Tool.Shared", "PiP-Tool.Shared\PiP-Tool.Shared.csproj", "{4D729D44-0AC3-4AFA-B438-FB2C4E959646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiP-Tool.Shared", "PiP-Tool.Shared\PiP-Tool.Shared.csproj", "{4D729D44-0AC3-4AFA-B438-FB2C4E959646}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

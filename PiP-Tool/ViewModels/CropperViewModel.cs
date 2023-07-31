@@ -325,9 +325,9 @@ namespace PiP_Tool.ViewModels
 
             _mlSource = new CancellationTokenSource();
             _mlToken = _mlSource.Token;
-            Task.Run(() =>
+            Task.Run(async () =>
             {
-                MachineLearningService.Instance.PredictAsync(
+                await  MachineLearningService.Instance.PredictAsync(
                     _windowInfo.Program,
                     _windowInfo.Title,
                     _windowInfo.RectNoBorder.Y,

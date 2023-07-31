@@ -1,6 +1,5 @@
 ﻿using System.Linq;
-using Microsoft.ML.Runtime.Api;
-using Constants = PiP_Tool.Shared.Constants;
+using Microsoft.ML.Data;
 
 namespace PiP_Tool.MachineLearning.DataModel
 {
