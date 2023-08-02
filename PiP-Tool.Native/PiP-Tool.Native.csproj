@@ -3,7 +3,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>PiP_Tool.Native</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>Helpers</AssemblyTitle>
     <Product>Helpers</Product>
     <Copyright>Copyright ©  2017</Copyright>
